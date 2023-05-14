@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Button
     uniqueID: 3646138883
+    locked: 0
+  - name: Enemy
+    uniqueID: 3007825265
     locked: 0
   - name: Player
     uniqueID: 130003759
