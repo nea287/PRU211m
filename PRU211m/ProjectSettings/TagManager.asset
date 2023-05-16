@@ -7,6 +7,9 @@ TagManager:
   - Button
   - Background
   - Enemy
+  - Ground
+  - Wall
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -53,6 +56,15 @@ TagManager:
   - name: Enemy
     uniqueID: 3007825265
     locked: 0
+  - name: Ground
+    uniqueID: 4007267117
+    locked: 0
   - name: Player
     uniqueID: 130003759
+    locked: 0
+  - name: Wall
+    uniqueID: 441532429
+    locked: 0
+  - name: Trap
+    uniqueID: 3447802389
     locked: 0
