@@ -18,7 +18,7 @@ public class MainCharacterMovement : MonoBehaviour
     [SerializeField]private int extraJump;
     private int jumpCounter;
 
-    Collider2D collider;
+    private Collider2D collider;
     private float coyoteCounter; // How much time passed since the player ran off the egde
     [SerializeField] private float coyoteTime; // How much time the player can hang in the air before jumping
     // Start is called before the first frame update

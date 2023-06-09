@@ -48,6 +48,8 @@ public class Heart : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
     }
+
+    [System.Obsolete]
     public void TakeDamage(float _damage)
     {
         if (invulnerable) return;
