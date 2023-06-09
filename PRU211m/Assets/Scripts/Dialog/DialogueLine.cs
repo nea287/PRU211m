@@ -14,12 +14,37 @@ public class DialogueLine : Dialogue
     [SerializeField] private Sprite characterSprite;
     [SerializeField] private Image imageHolder;
     [SerializeField] private GameObject game;
+    public static bool flagCheckDialog = false;
+    private int currentText = 0;
     
     private void Awake()
     {
         textHolder = GetComponent<Text>();
-        StartCoroutine(WriteText(input, textHolder, delay, source, game));
+        StartCoroutine(WriteText(input[currentText], textHolder, delay, source));
+        currentText++;
         imageHolder.sprite = characterSprite;
         imageHolder.preserveAspect = true;  
+    }
+    private void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Submit"))
+        {
+
+            if (game.active && !isTyping)
+            {
+                textHolder.text = "";
+                StartCoroutine(WriteText(input[currentText], textHolder, delay, source));
+                currentText++;
+            }
+            if (currentText == input.Length)
+            {
+                game.active = false;
+                flagCheckDialog = true;
+
+            }
+
+        }
+
     }
 }

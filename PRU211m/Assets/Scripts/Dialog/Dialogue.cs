@@ -4,28 +4,28 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public static bool flagCheckDialog = false;
-    protected IEnumerator WriteText(string[] input, Text textHolder, float delay, AudioClip sound, GameObject game)
+    
+    protected bool isTyping = false;
+    private void WriteDialogue()
     {
-        int count = 0;
-        while(input.Length >= count)
+
+    }
+    protected IEnumerator WriteText(string input, Text textHolder, float delay, AudioClip sound)
+    {
+
+        for (int i = 0; i < input.Length; i++)
         {
 
-            for (int i = 0; i < input[count].Length; i++)
-            {
+            //isTyping = true;
+            textHolder.text += input[i];
+            yield return new WaitForSeconds(delay);
+            isTyping = true;
 
-                textHolder.text += input[count][i];
-                yield return new WaitForSeconds(delay);
-            }
-            textHolder.text = "";
-            if (Input.GetMouseButtonDown(0))
-            {
-                count++;
-            }
-            
         }
-        game.active = false;
-        flagCheckDialog = true;
+        isTyping = false;
+        
+
+
 
     }
 }

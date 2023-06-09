@@ -45,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (PlayerInSight())
         {
-            if (!Dialogue.flagCheckDialog)
+            if (!DialogueLine.flagCheckDialog)
             {
                 dialogue.active = true;
             }
