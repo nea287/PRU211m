@@ -9,21 +9,21 @@ public class BackgroundMusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (!PlayerPrefs.HasKey("MusicVolume"))
-        //{
-        //    PlayerPrefs.SetFloat("MusicVolume", 1);
-        //    Load();
-        //}
-        //else
-        //{
+        if (!PlayerPrefs.HasKey("MusicVolume"))
+        {
+            PlayerPrefs.SetFloat("MusicVolume", 1);
             Load();
-        //}
+        }
+        else
+        {
+            Load();
+        }
     }
 
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
-        //Save();
+        Save();
     }
 
     // Player prefs stores and accesses player preferences between game sessions
@@ -32,8 +32,8 @@ public class BackgroundMusicManager : MonoBehaviour
         volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume");
     }
 
-    //private void Save()
-    //{
-    //    PlayerPrefs.SetFloat("MusicVolume", volumeSlider.value);
-    //}
+    private void Save()
+    {
+        PlayerPrefs.SetFloat("MusicVolume", volumeSlider.value);
+    }
 }
