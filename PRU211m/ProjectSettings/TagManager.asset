@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Trap
   - Checkpoint
+  - Skill
   layers:
   - Default
   - TransparentFX
