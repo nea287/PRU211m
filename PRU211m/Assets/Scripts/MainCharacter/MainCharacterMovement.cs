@@ -96,4 +96,11 @@ public class MainCharacterMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0, Vector2.down, 0.1f, groundLayer);
         return (raycastHit.collider != null);
     }
+
+
+    public bool CanAttack()
+    {
+        return horizontalInput == 0 && IsGrounded();
+    }
+
 }
