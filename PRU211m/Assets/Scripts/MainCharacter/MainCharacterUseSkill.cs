@@ -20,7 +20,7 @@ public class MainCharacterUseSkill : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1) && cooldownTimer > useSkillCooldown && mainCharacterMovement.CanAttack())
+        if(Input.GetKeyDown(KeyCode.Q) && cooldownTimer > useSkillCooldown && mainCharacterMovement.CanAttack())
         {
             CastSkill();
         }
@@ -47,6 +47,7 @@ public class MainCharacterUseSkill : MonoBehaviour
         {
             if (!fireballs[i].activeInHierarchy)
             {
+                
                 return i;
             }
         }

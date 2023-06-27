@@ -39,6 +39,6 @@ public class QualityManager : MonoBehaviour
 
     private void Save()
     {
-        PlayerPrefs.SetFloat("Quality", qualityDropDown.value);
+        PlayerPrefs.SetInt("Quality", qualityDropDown.value);
     }
 }

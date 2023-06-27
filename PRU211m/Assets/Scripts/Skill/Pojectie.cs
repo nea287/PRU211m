@@ -47,7 +47,7 @@ public class Pojectie : MonoBehaviour
         hit = false;
         boxCollider.enabled = true;
         float localScaleX = transform.localScale.x;
-        if(Mathf.Sign(localScaleX) != _direction)
+        if(Mathf.Sign(localScaleX) == _direction)
         {
             localScaleX = -localScaleX;
         }
