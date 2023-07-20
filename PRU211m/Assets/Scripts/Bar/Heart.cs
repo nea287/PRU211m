@@ -23,8 +23,10 @@ public class Heart : MonoBehaviour
 
     [Header("Death Sound")]
     [SerializeField] private AudioClip deathSound;
-    [SerializeField] private AudioClip hurtSound; 
+    [SerializeField] private AudioClip hurtSound;
 
+
+    private PlayerRespawn playerRespawn;
     public float currentHealth { get; set; }
     private bool invulnerable;
     private void Awake()
@@ -33,6 +35,7 @@ public class Heart : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
         myBody = GetComponent<Rigidbody2D>();
+        playerRespawn = GetComponent<PlayerRespawn>();
     }
     private IEnumerator Invunerability()
     {
@@ -75,6 +78,10 @@ public class Heart : MonoBehaviour
                     flagCheckDie = true;
                 }
                 dead = true;
+                //audioSource.PlayOneShot(deathSound);
+                //audioSource.PlayOneShot(deathSound);
+                playerRespawn.RespawnCheck();
+                Respawn();
                 //SoundManager.instance.PlaySound(deathSound);
             }
             else
@@ -84,6 +91,22 @@ public class Heart : MonoBehaviour
             }
 
         }
+    }
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+    public void Respawn()
+    {
+        AddHealth(startingHealth);
+        anim.ResetTrigger("Die");
+        anim.Play("Idle");
+        StartCoroutine(Invunerability());
+        dead = false;
+
+        //Activate all attached component classes
+        foreach (Behaviour component in components)
+            component.enabled = true;
     }
 
     private void PlayerDie()

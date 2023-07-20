@@ -7,6 +7,8 @@ public class MainCharacterMovement : MonoBehaviour
     [Header("Player")]
     [SerializeField] private float speed;
     [SerializeField] private float JumpPower;
+
+    public static float JumpPowerOfSkill = 0;
     private float horizontalInput;
     Animator anim;
     Rigidbody2D myBody;
@@ -87,7 +89,11 @@ public class MainCharacterMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            myBody.velocity = new Vector2(myBody.velocity.x, JumpPower);
+            if (JumpPower > JumpPowerOfSkill)
+            {
+                JumpPowerOfSkill = JumpPower;
+            }
+            myBody.velocity = new Vector2(myBody.velocity.x, JumpPowerOfSkill);
         }
         coyoteCounter = 0; // reset coyote to 0 avoid double jumps
     }

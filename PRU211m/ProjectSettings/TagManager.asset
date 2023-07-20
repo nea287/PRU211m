@@ -10,6 +10,10 @@ TagManager:
   - Ground
   - Wall
   - Trap
+  - Checkpoint
+  - LeftSide
+  - fireball
+  - Win
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - UI
   - Player
   - 
-  - 
+  - Tree
   - Enemy
   - 
   - Ground
@@ -62,9 +66,9 @@ TagManager:
   - name: Ground
     uniqueID: 4007267117
     locked: 0
-  - name: Player
-    uniqueID: 130003759
-    locked: 0
   - name: Trap
     uniqueID: 3447802389
+    locked: 0
+  - name: Player
+    uniqueID: 130003759
     locked: 0
