@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 
-public class PlayerRespawn : MonoBehaviour
+public class PlayerRespawn1 : MonoBehaviour
 {
     [SerializeField] private AudioClip checkpointSound;
     // sound play when pick up new check point

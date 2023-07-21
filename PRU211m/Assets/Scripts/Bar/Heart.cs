@@ -126,24 +126,8 @@ public class Heart : MonoBehaviour
         }
     }
 
-    public void AddHealth(float _value)
-    {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
-    }
 
-    public void Respawn()
-    {
-        dead = false;
-        AddHealth(startingHealth);
-        anim.ResetTrigger("Die");
-        anim.Play("Idle");
-        StartCoroutine(Invunerability());
-        // Active all attached component classes 
-        foreach (Behaviour component in components)
-        {
-            component.enabled = true;
-        }
-    }
+
 
     public void Reset()
     {

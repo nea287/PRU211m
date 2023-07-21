@@ -39,7 +39,12 @@ public class DatabaseManager : MonoBehaviour
         if (userKillData != null)
         {
             DataSnapshot snapshot = userKillData.Result;
-            onCallback.Invoke(int.Parse(snapshot.Value.ToString()));
+            string snaphotstr = snapshot.Value.ToString();
+            if(snaphotstr == "" || snaphotstr == null)
+            {
+                snaphotstr = "0";
+            }
+            onCallback.Invoke(int.Parse(snaphotstr));
         }
     }
 
@@ -50,7 +55,12 @@ public class DatabaseManager : MonoBehaviour
         if (userDeathData != null)
         {
             DataSnapshot snapshot = userDeathData.Result;
-            onCallback.Invoke(int.Parse(snapshot.Value.ToString()));
+            string snaphotstr = snapshot.Value.ToString();
+            if (snaphotstr == "" || snaphotstr == null)
+            {
+                snaphotstr = "0";
+            }
+            onCallback.Invoke(int.Parse(snaphotstr));
         }
     }
 
@@ -61,7 +71,12 @@ public class DatabaseManager : MonoBehaviour
         if (userTimeData != null)
         {
             DataSnapshot snapshot = userTimeData.Result;
-            onCallback.Invoke(float.Parse(snapshot.Value.ToString()));
+            string input1 = snapshot.Value.ToString();
+            if(input1 == "" || input1 == null)
+            {
+                input1 = "0";
+            }
+            onCallback.Invoke(float.Parse(input1));
         }
     }
 

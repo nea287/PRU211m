@@ -5485,7 +5485,7 @@ MonoBehaviour:
   damage: 1
   firepoint: {fileID: 0}
   fireballs: []
-  colliderDistance: -0.6
+  colliderDistance: 0.6
   boxCollider: {fileID: 1575719819}
   playerLayer:
     serializedVersion: 2
@@ -5525,6 +5525,7 @@ MonoBehaviour:
   KillText: {fileID: 617170179}
   DeathText: {fileID: 1919972411}
   TimeText: {fileID: 1766547231}
+  userID: 
 --- !u!4 &1596767519
 Transform:
   m_ObjectHideFlags: 0
